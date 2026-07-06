@@ -1,43 +1,54 @@
-create database company;
-use company;
-
--- employee table
-create table employee (
-employee_id varchar(15) primary key,
-first_name varchar(50),
-last_name varchar(30),
-address varchar(150),
-gender varchar(10),
-job_id varchar(15),
-salary varchar(15),
-department_id varchar(15));
+-- SQL Practice 01
+-- Company Database Setup
 
 
--- department table
-create table department(
-department_id varchar(15) primary key,
-department_name varchar(50),
-manager_name varchar(50));
+
+-- Step 1: Create and Select the Database
+CREATE DATABASE company;
+USE company;
 
 
--- jobs table
-create table jobs(
-job_id varchar(15) primary key,
-job_title varchar(50),
-min_salary varchar(10),
-max_salary varchar(10));
+-- Step 2: Create Employee Table
+CREATE TABLE employee (
+    employee_id VARCHAR(15) PRIMARY KEY,
+    first_name VARCHAR(50),
+    last_name VARCHAR(30),
+    address VARCHAR(150),
+    gender VARCHAR(10),
+    job_id VARCHAR(15),
+    salary VARCHAR(15),
+    department_id VARCHAR(15)
+);
 
 
--- job history table
-create table job_history(
-employee_id varchar(15) primary key,
-start_date date,
-end_date date,
-job_id varchar(15),
-department_id varchar(15));
+-- Step 3: Create Department Table
+CREATE TABLE department (
+    department_id VARCHAR(15) PRIMARY KEY,
+    department_name VARCHAR(50),
+    manager_name VARCHAR(50)
+);
 
 
--- inserting data in employee table
+-- Step 4: Create Jobs Table
+CREATE TABLE jobs (
+    job_id VARCHAR(15) PRIMARY KEY,
+    job_title VARCHAR(50),
+    min_salary VARCHAR(10),
+    max_salary VARCHAR(10)
+);
+
+
+-- Step 5: Create Job History Table
+CREATE TABLE job_history (
+    employee_id VARCHAR(15) PRIMARY KEY,
+    start_date DATE,
+    end_date DATE,
+    job_id VARCHAR(15),
+    department_id VARCHAR(15)
+);
+
+
+-- Step 6: Insert Sample Data into Employee Table
 INSERT INTO employee (employee_id, first_name, last_name, gender, address, job_id, salary, department_id) VALUES 
 ('EMP000001', 'John', 'Doe', 'M', '123 Elm St, Springfield', 'JOB001', 60000.00, 'DEP001'), 
 ('EMP000002', 'Jane', 'Smith', 'F', '456 Oak St, Springfield', 'JOB002', 85000.00, 'DEP002'),
@@ -52,7 +63,7 @@ INSERT INTO employee (employee_id, first_name, last_name, gender, address, job_i
 
 
 
--- inserting data in jobs table
+-- Step 7: Insert Sample Data into Jobs Table
 INSERT INTO jobs (JOB_ID, JOB_TITLE, MIN_SALARY, MAX_SALARY) VALUES 
 ('JOB001', 'Manager', 50000.00, 80000.00), 
 ('JOB002', 'Senior Developer', 70000.00, 120000.00), 
@@ -66,7 +77,7 @@ INSERT INTO jobs (JOB_ID, JOB_TITLE, MIN_SALARY, MAX_SALARY) VALUES
 ('JOB010', 'IT Support', 35000.00, 50000.00); 
 
 
--- insert data into departments table
+-- Step 8: Insert Sample Data into Department Table
 INSERT INTO department (department_id, DEPARTMENT_NAME, MANAGER_NAME) VALUES 
 ('DEP001', 'Sales', 'Alice Johnson'), 
 ('DEP002', 'IT', 'Eve Davis'), 
@@ -80,7 +91,7 @@ INSERT INTO department (department_id, DEPARTMENT_NAME, MANAGER_NAME) VALUES
 ('DEP010', 'Procurement', 'Jack White'); 
 
 
--- insert data into job history table
+-- Step 9: Insert Sample Data into Job History Table
 INSERT INTO job_history (employee_id, START_DATE, end_DATE, JOB_ID, DEPARTMENT_ID) VALUES 
 ('EMP000001', '2015-06-01', '2020-12-31', 'JOB001', 'DEP001'), 
 ('EMP000002', '2017-03-15', '2022-11-30', 'JOB002', 'DEP002'), 
@@ -94,9 +105,8 @@ INSERT INTO job_history (employee_id, START_DATE, end_DATE, JOB_ID, DEPARTMENT_I
 ('EMP000010', '2012-12-25', '2018-10-10', 'JOB010', 'DEP002'); 
 
 
-
-
-select * from employee;
-select * from jobs;
-select * from department;
-select * from job_history;
+-- Step 10: Verify the Data
+SELECT * FROM employee;
+SELECT * FROM jobs;
+SELECT * FROM department;
+SELECT * FROM job_history;
