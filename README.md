@@ -27,6 +27,7 @@ This repository documents my journey of learning SQL for Data Analytics through 
 | -- | ---------------------------- | -------------------------------------------------------------------------------------------------------------- |
 | 01 | 01_SQL_Basics_Company_DB.sql | Creates a sample company database with tables, sample records, and introductory SQL operations. |
 | 02 | 02_SQL_Basic_Queries.sql | Practice queries covering filtering, sorting, aggregate functions, grouping, HAVING, pattern matching, and date-based data retrieval.|
+| 03 | 03_SQL_Analytical_Queries.sql | SQL practice covering aggregate functions, GROUP BY, HAVING, sorting, filtering, and departmental salary analysis. |
 
 
 ---
